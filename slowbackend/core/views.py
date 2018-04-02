@@ -14,6 +14,6 @@ def api_service_status_view(request):
         for i in range(len(a)):
             a[i] += 1
 
-    time.sleep(settings.API_DELAY)
+    # time.sleep(settings.API_DELAY)
 
     return JsonResponse({'status': 200, 'message': API_SERVICE_STATUS_OK})
