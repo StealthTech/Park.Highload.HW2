@@ -27,7 +27,7 @@ configuration_markup = {
     },
 
     'application': {
-        'api_delay': 10,
+        'api_delay': 0,
     }
 }
 
