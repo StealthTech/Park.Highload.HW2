@@ -20,10 +20,10 @@ def api_service_status_view(request):
     return JsonResponse({'status': 200, 'message': API_SERVICE_STATUS_OK, 'method': 'service'})
 
 
-def api_sample_load_view(request):
-    def sample_primes(n):
+def api_sample_load_view(request, n):
+    def get_sample_primes(num):
         result = []
-        for p in range(2, n + 1):
+        for p in range(2, num + 1):
             for i in range(2, p):
                 if p % i == 0:
                     break
@@ -32,8 +32,8 @@ def api_sample_load_view(request):
         return result
 
     before = datetime.now()
-    result = sample_primes(10000)
+    primes = get_sample_primes(n)
     elapsed = datetime.now() - before
 
-    return JsonResponse({'status': 200, 'message': API_SERVICE_STATUS_OK, 
-                         'method': 'load', 'result': result, 'elapsed_time': elapsed})
+    return JsonResponse({'status': 200, 'message': API_SERVICE_STATUS_OK,
+                         'method': 'load', 'result_len': len(primes), 'elapsed_time': elapsed})

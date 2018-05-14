@@ -7,5 +7,5 @@ app_name = 'core'
 
 urlpatterns = [
     path('service/status/', api_service_status_view, name='api_service_status'),
-    path('service/sample/', api_sample_load_view, name='api_service_sample'),
+    path('service/sample/<int:n>', api_sample_load_view, name='api_service_sample'),
 ]
