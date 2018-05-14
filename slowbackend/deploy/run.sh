@@ -1,3 +1,3 @@
 #!/bin/bash
 
-gunicorn slowbackend.wsgi -b 127.0.0.1:8000
+source env/bin/activate && gunicorn slowbackend.wsgi -b 127.0.0.1:8000
